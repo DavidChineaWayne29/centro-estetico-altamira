@@ -5,14 +5,18 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undef
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn(
-    '[Supabase] Missing env vars VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY — ' +
-    'using static config fallback. Add them in Vercel > Settings > Environment Variables.'
+    '[Supabase] Env vars VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY no definidas — ' +
+    'la app funciona con datos del config estático. Añádelas en Vercel > Settings > Environment Variables.'
   )
 }
 
-// Use placeholder values so createClient never throws — all queries will simply fail
-// gracefully and the app falls back to the static config data.
+const PLACEHOLDER_URL = 'https://placeholder.supabase.co'
+const PLACEHOLDER_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.' +
+  'eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYwMDAwMDAwMCwiZXhwIjoyMDAwMDAwMDAwfQ.' +
+  'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+
 export const supabase = createClient(
-  supabaseUrl ?? 'https://placeholder.supabase.co',
-  supabaseAnonKey ?? 'placeholder-key'
+  supabaseUrl ?? PLACEHOLDER_URL,
+  supabaseAnonKey ?? PLACEHOLDER_KEY
 )

@@ -142,9 +142,9 @@ export const siteConfig: SiteConfig = {
     title:    'Encuéntranos',
     subtitle: 'Lunes a viernes 9:00–20:00 · Sábados 9:00–14:00',
     address:  'Calle Méndez Núñez 18, Santa Cruz de Tenerife',
-    phone:    '+34 922 456 789',
-    email:    'hola@centroaltamira.es',
-    whatsapp: '+34 600 456 789',
+    phone:    '+34 618 542 063',
+    email:    'solimarcoweb@gmail.com',
+    whatsapp: '+34 618 542 063',
     showForm: true,
   },
 

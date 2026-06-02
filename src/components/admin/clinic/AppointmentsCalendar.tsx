@@ -1,5 +1,23 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight, Clock, MessageCircle, Mail } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Clock, MessageCircle, Mail, Info } from 'lucide-react'
+
+function DemoNotice({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50">
+      <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full text-center">
+        <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Info size={22} className="text-amber-600" />
+        </div>
+        <h3 className="font-semibold text-gray-900 mb-2">Proyecto de demostración</h3>
+        <p className="text-sm text-gray-500 mb-5">Esta es una web de ejemplo. Para solicitar una web real, contacta con <span className="font-medium text-gray-700">Solimar&Co.</span></p>
+        <a href="mailto:solimarcoweb@gmail.com" className="block w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2.5 rounded-xl transition-colors mb-2">
+          solimarcoweb@gmail.com
+        </a>
+        <button onClick={onClose} className="text-sm text-gray-400 hover:text-gray-600 transition-colors">Cerrar</button>
+      </div>
+    </div>
+  )
+}
 import type { Appointment } from './mockData'
 
 interface Props {
@@ -47,6 +65,7 @@ function durationToRows(minutes: number): number {
 export function AppointmentsCalendar({ appointments, onConfirm, onCancel }: Props) {
   const [monday, setMonday] = useState(() => getMonday(new Date()))
   const [selected, setSelected] = useState<Appointment | null>(null)
+  const [showDemo, setShowDemo] = useState(false)
   const weekDates = getWeekDates(monday)
 
   const prevWeek = () => { const d = new Date(monday); d.setDate(d.getDate() - 7); setMonday(d) }
@@ -178,15 +197,16 @@ export function AppointmentsCalendar({ appointments, onConfirm, onCancel }: Prop
               </div>
             )}
             {selected.status === 'confirmed' && selected.confirmVia === 'whatsapp' && (
-              <a href={`https://wa.me/${selected.phone.replace(/\D/g,'')}`} target="_blank" rel="noreferrer"
+              <button onClick={() => setShowDemo(true)}
                 className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium py-2.5 rounded-xl transition-colors">
                 <MessageCircle size={15} /> Contactar por WhatsApp
-              </a>
+              </button>
             )}
             <button onClick={() => setSelected(null)} className="w-full mt-2 text-sm text-neutral-400 hover:text-neutral-600 transition-colors py-1">Cerrar</button>
           </div>
         </div>
       )}
+      {showDemo && <DemoNotice onClose={() => setShowDemo(false)} />}
     </div>
   )
 }

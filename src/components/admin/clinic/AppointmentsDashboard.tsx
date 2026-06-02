@@ -1,10 +1,29 @@
-import { MessageCircle, Mail, Clock, CalendarDays, CheckCircle2, XCircle, AlertCircle } from 'lucide-react'
+import { useState } from 'react'
+import { MessageCircle, Mail, Clock, CalendarDays, CheckCircle2, XCircle, AlertCircle, Info } from 'lucide-react'
 import type { Appointment } from './mockData'
 
 interface Props {
   appointments: Appointment[]
   onConfirm: (id: string) => void
   onCancel:  (id: string) => void
+}
+
+function DemoNotice({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50">
+      <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full text-center">
+        <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Info size={22} className="text-amber-600" />
+        </div>
+        <h3 className="font-semibold text-gray-900 mb-2">Proyecto de demostración</h3>
+        <p className="text-sm text-gray-500 mb-5">Esta es una web de ejemplo. Para solicitar una web real, contacta con <span className="font-medium text-gray-700">Solimar&Co.</span></p>
+        <a href="mailto:solimarcoweb@gmail.com" className="block w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2.5 rounded-xl transition-colors mb-2">
+          solimarcoweb@gmail.com
+        </a>
+        <button onClick={onClose} className="text-sm text-gray-400 hover:text-gray-600 transition-colors">Cerrar</button>
+      </div>
+    </div>
+  )
 }
 
 const STATUS_STYLE: Record<string, string> = {
@@ -28,6 +47,7 @@ function StatCard({ label, value, sub, color }: { label: string; value: number; 
 }
 
 export function AppointmentsDashboard({ appointments, onConfirm, onCancel }: Props) {
+  const [showDemo, setShowDemo] = useState(false)
   const todayStr = new Date().toISOString().split('T')[0]
   const todayCitas = appointments.filter(a => a.date === todayStr && a.status !== 'cancelled')
   const pending    = appointments.filter(a => a.status === 'pending').length
@@ -39,14 +59,13 @@ export function AppointmentsDashboard({ appointments, onConfirm, onCancel }: Pro
     return d >= start && d <= end && a.status !== 'cancelled'
   }).length
 
-  const handleWhatsApp = (a: Appointment, action: 'confirm' | 'cancel') => {
-    const msg = action === 'confirm'
-      ? `Hola ${a.clientName}, confirmamos tu cita de ${a.service} el ${new Date(a.date+'T12:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })} a las ${a.time}. ¡Te esperamos! — Centro Estético Altamira`
-      : `Hola ${a.clientName}, lamentamos informarte que tu cita de ${a.service} el ${new Date(a.date+'T12:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })} a las ${a.time} ha sido cancelada. Puedes solicitar una nueva cita cuando quieras. — Centro Estético Altamira`
-    window.open(`https://wa.me/${a.phone.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`, '_blank')
+  const handleWhatsApp = (_a: Appointment, _action: 'confirm' | 'cancel') => {
+    setShowDemo(true)
   }
 
   return (
+    <>
+    {showDemo && <DemoNotice onClose={() => setShowDemo(false)} />}
     <div className="space-y-6">
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -157,5 +176,6 @@ export function AppointmentsDashboard({ appointments, onConfirm, onCancel }: Pro
         </div>
       )}
     </div>
+    </>
   )
 }

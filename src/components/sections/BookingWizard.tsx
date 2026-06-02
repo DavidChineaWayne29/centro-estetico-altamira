@@ -1,5 +1,23 @@
 import { useState } from 'react'
-import { Check, ChevronRight, ChevronLeft, MessageCircle, Mail, Clock, Euro } from 'lucide-react'
+import { Check, ChevronRight, ChevronLeft, MessageCircle, Mail, Clock, Euro, Info } from 'lucide-react'
+
+function DemoNotice({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50">
+      <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full text-center">
+        <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Info size={22} className="text-amber-600" />
+        </div>
+        <h3 className="font-semibold text-neutral-900 mb-2">Proyecto de demostración</h3>
+        <p className="text-sm text-neutral-500 mb-5">Esta es una web de ejemplo. Para solicitar una web real para tu negocio, contacta con <span className="font-medium text-neutral-700">Solimar&Co.</span></p>
+        <a href="mailto:solimarcoweb@gmail.com" className="block w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2.5 rounded-xl transition-colors mb-2">
+          solimarcoweb@gmail.com
+        </a>
+        <button onClick={onClose} className="text-sm text-neutral-400 hover:text-neutral-600 transition-colors">Cerrar</button>
+      </div>
+    </div>
+  )
+}
 import { useTranslation } from 'react-i18next'
 import { SectionWrapper, SectionHeader } from '@/components/ui/SectionWrapper'
 
@@ -114,21 +132,14 @@ export function BookingWizard() {
   const [form, setForm] = useState<BookingForm>(EMPTY_FORM)
   const [done, setDone] = useState(false)
   const [catFilter, setCatFilter] = useState('Todos')
+  const [showDemo, setShowDemo] = useState(false)
 
   const categories = ['Todos', ...Array.from(new Set(MOCK_SERVICES.map(s => s.category)))]
   const filtered = catFilter === 'Todos' ? MOCK_SERVICES : MOCK_SERVICES.filter(s => s.category === catFilter)
-
   const slots = form.date ? generateSlots(form.date, BOOKED[form.date.toDateString()] ?? []) : []
 
-  const handleSubmit = () => {
-    if (form.confirmVia === 'whatsapp' && form.phone) {
-      const msg = encodeURIComponent(
-        `Hola, quiero solicitar una cita:\n• Tratamiento: ${form.service?.name}\n• Fecha: ${form.date?.toLocaleDateString('es-ES')}\n• Hora: ${form.time}\n• Nombre: ${form.name}`
-      )
-      window.open(`https://wa.me/34600456789?text=${msg}`, '_blank')
-    }
-    setDone(true)
-  }
+  const handleSubmit = () => setShowDemo(true)
+  const handleDemoClose = () => { setShowDemo(false); setDone(true) }
 
   const inputCls = 'w-full border border-neutral-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all'
 
@@ -157,6 +168,8 @@ export function BookingWizard() {
   }
 
   return (
+    <>
+    {showDemo && <DemoNotice onClose={handleDemoClose} />}
     <SectionWrapper id="cita" bg="neutral">
       <SectionHeader
         title={t('booking.title', { defaultValue: 'Pide tu cita' })}
@@ -349,5 +362,6 @@ export function BookingWizard() {
         )}
       </div>
     </SectionWrapper>
+    </>
   )
 }

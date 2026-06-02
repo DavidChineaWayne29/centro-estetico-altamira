@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home":        "Inicio",
+    "treatments":  "Tratamientos",
+    "about":       "Nosotras",
+    "gallery":     "Galería",
+    "contact":     "Contacto",
+    "booking":     "Pedir cita",
+    "navigation":  "Navegación",
+    "openMenu":    "Abrir menú",
+    "closeMenu":   "Cerrar menú",
+    "language":    "Idioma"
+  },
+  "hero": {
+    "headline":    "Tu bienestar, nuestra pasión",
+    "subheadline": "Centro estético premium en Santa Cruz de Tenerife. Tratamientos personalizados con las últimas técnicas.",
+    "ctaPrimary":  "Pedir cita ahora",
+    "ctaSecondary":"Ver tratamientos",
+    "scroll":      "Scroll"
+  },
+  "services": {
+    "title":    "Nuestros tratamientos",
+    "subtitle": "Cada tratamiento, diseñado para ti",
+    "Sparkles": { "title": "Tratamientos faciales",  "description": "Hidratación profunda, antiedad, limpieza facial y mesoterapia." },
+    "Zap":      { "title": "Depilación láser",       "description": "Tecnología de última generación. Resultados permanentes, sin dolor." },
+    "Heart":    { "title": "Tratamientos corporales","description": "Reductores, reafirmantes y anticelulíticos personalizados." },
+    "Leaf":     { "title": "Masajes y relajación",   "description": "Masajes terapéuticos y técnicas orientales para liberar la tensión." }
+  },
+  "about": {
+    "title": "Más de 10 años cuidándote",
+    "body":  "Somos un equipo de profesionales especializadas en estética avanzada, combinando tecnología de vanguardia con un trato cercano y personalizado."
+  },
+  "gallery": {
+    "title":    "Nuestro espacio",
+    "subtitle": "Un ambiente pensado para tu bienestar",
+    "close":    "Cerrar"
+  },
+  "booking": {
+    "title":            "Pide tu cita",
+    "subtitle":         "Online, rápido y sin esperas",
+    "step1":            "Tratamiento",
+    "step2":            "Fecha",
+    "step3":            "Hora",
+    "step4":            "Tus datos",
+    "selectService":    "Elige un tratamiento",
+    "selectDate":       "Elige una fecha",
+    "selectTime":       "Elige una hora",
+    "noSlots":          "No hay horas disponibles para este día",
+    "name":             "Nombre completo",
+    "phone":            "Teléfono",
+    "email":            "Email",
+    "notes":            "Notas especiales",
+    "notesPlaceholder": "Alguna preferencia o necesidad especial...",
+    "confirmVia":       "¿Cómo prefieres recibir la confirmación?",
+    "viaWhatsapp":      "WhatsApp",
+    "viaEmail":         "Email",
+    "submit":           "Solicitar cita",
+    "sending":          "Enviando...",
+    "successTitle":     "¡Cita solicitada!",
+    "successText":      "Te contactaremos para confirmar en breve.",
+    "another":          "Pedir otra cita",
+    "next":             "Siguiente",
+    "back":             "Atrás",
+    "duration":         "min",
+    "from":             "Desde"
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestras clientas"
+  },
+  "contact": {
+    "sectionTitle":      "Encuéntranos",
+    "address":           "Dirección",
+    "phone":             "Teléfono",
+    "email":             "Email",
+    "whatsapp":          "WhatsApp",
+    "name":              "Nombre",
+    "message":           "Mensaje",
+    "submit":            "Enviar mensaje",
+    "sending":           "Enviando...",
+    "error":             "Error al enviar. Inténtalo de nuevo.",
+    "successTitle":      "¡Mensaje enviado!",
+    "successText":       "Te responderemos lo antes posible.",
+    "namePlaceholder":   "Tu nombre",
+    "emailPlaceholder":  "tu@email.com",
+    "messagePlaceholder":"¿En qué podemos ayudarte?",
+    "required":          " *"
+  },
+  "footer": {
+    "navigation": "Navegación",
+    "legal":      "Legal",
+    "allRights":  "Todos los derechos reservados.",
+    "tagline":    "Centro estético premium en Tenerife desde 2013."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error":   "Error al cargar los datos"
+  },
+  "admin": {
+    "title":      "Panel — Centro Altamira",
+    "loginTitle": "Acceso administrador",
+    "login":      "Iniciar sesión",
+    "logout":     "Cerrar sesión",
+    "email":      "Email",
+    "password":   "Contraseña",
+    "loginError": "Email o contraseña incorrectos",
+    "tabs": {
+      "dashboard":    "Inicio",
+      "appointments": "Citas",
+      "schedule":     "Horarios",
+      "services":     "Tratamientos",
+      "messages":     "Mensajes"
+    }
+  }
+}

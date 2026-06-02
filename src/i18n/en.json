@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home":        "Home",
+    "treatments":  "Treatments",
+    "about":       "About us",
+    "gallery":     "Gallery",
+    "contact":     "Contact",
+    "booking":     "Book now",
+    "navigation":  "Navigation",
+    "openMenu":    "Open menu",
+    "closeMenu":   "Close menu",
+    "language":    "Language"
+  },
+  "hero": {
+    "headline":    "Your wellbeing, our passion",
+    "subheadline": "Premium aesthetic centre in Santa Cruz de Tenerife. Personalised treatments with the latest techniques.",
+    "ctaPrimary":  "Book an appointment",
+    "ctaSecondary":"View treatments",
+    "scroll":      "Scroll"
+  },
+  "services": {
+    "title":    "Our treatments",
+    "subtitle": "Every treatment, designed for you",
+    "Sparkles": { "title": "Facial treatments",  "description": "Deep hydration, anti-aging, facial cleansing and mesotherapy." },
+    "Zap":      { "title": "Laser hair removal", "description": "Latest generation technology. Permanent results, painless." },
+    "Heart":    { "title": "Body treatments",    "description": "Slimming, firming and anti-cellulite personalised treatments." },
+    "Leaf":     { "title": "Massage & relaxation","description": "Therapeutic massages and oriental techniques to release tension." }
+  },
+  "about": {
+    "title": "Over 10 years taking care of you",
+    "body":  "We are a team of professionals specialised in advanced aesthetics, combining cutting-edge technology with a close and personalised approach."
+  },
+  "gallery": {
+    "title":    "Our space",
+    "subtitle": "An environment designed for your wellbeing",
+    "close":    "Close"
+  },
+  "booking": {
+    "title":            "Book your appointment",
+    "subtitle":         "Online, fast and no waiting",
+    "step1":            "Treatment",
+    "step2":            "Date",
+    "step3":            "Time",
+    "step4":            "Your details",
+    "selectService":    "Choose a treatment",
+    "selectDate":       "Choose a date",
+    "selectTime":       "Choose a time",
+    "noSlots":          "No time slots available for this day",
+    "name":             "Full name",
+    "phone":            "Phone",
+    "email":            "Email",
+    "notes":            "Special notes",
+    "notesPlaceholder": "Any preference or special need...",
+    "confirmVia":       "How would you like to receive confirmation?",
+    "viaWhatsapp":      "WhatsApp",
+    "viaEmail":         "Email",
+    "submit":           "Request appointment",
+    "sending":          "Sending...",
+    "successTitle":     "Appointment requested!",
+    "successText":      "We will contact you to confirm shortly.",
+    "another":          "Book another appointment",
+    "next":             "Next",
+    "back":             "Back",
+    "duration":         "min",
+    "from":             "From"
+  },
+  "testimonials": {
+    "title": "What our clients say"
+  },
+  "contact": {
+    "sectionTitle":      "Find us",
+    "address":           "Address",
+    "phone":             "Phone",
+    "email":             "Email",
+    "whatsapp":          "WhatsApp",
+    "name":              "Name",
+    "message":           "Message",
+    "submit":            "Send message",
+    "sending":           "Sending...",
+    "error":             "Failed to send. Please try again.",
+    "successTitle":      "Message sent!",
+    "successText":       "We'll get back to you as soon as possible.",
+    "namePlaceholder":   "Your name",
+    "emailPlaceholder":  "you@email.com",
+    "messagePlaceholder":"How can we help you?",
+    "required":          " *"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "legal":      "Legal",
+    "allRights":  "All rights reserved.",
+    "tagline":    "Premium aesthetic centre in Tenerife since 2013."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error":   "Error loading data"
+  },
+  "admin": {
+    "title":      "Panel — Centro Altamira",
+    "loginTitle": "Admin login",
+    "login":      "Sign in",
+    "logout":     "Sign out",
+    "email":      "Email",
+    "password":   "Password",
+    "loginError": "Invalid email or password",
+    "tabs": {
+      "dashboard":    "Home",
+      "appointments": "Appointments",
+      "schedule":     "Schedule",
+      "services":     "Treatments",
+      "messages":     "Messages"
+    }
+  }
+}

@@ -57,14 +57,23 @@ export function Navbar({ nav, sectionIds }: NavbarProps) {
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <a
-            href="#inicio"
-            onClick={() => handleNavClick('#inicio')}
-            className={`font-display text-xl font-semibold transition-colors drop-shadow-lg ${
-              scrolled ? 'text-neutral-900 hover:text-primary-600' : 'text-white hover:text-primary-200'
-            }`}
-          >
-            {nav.logoIsImage ? <img src={nav.logo} alt="Logo" className="h-10 w-auto" /> : nav.logo}
+          <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center gap-2.5 group">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="12" cy="18" rx="10" ry="6" transform="rotate(-40 12 18)"
+                fill={scrolled ? '#2a9459' : 'white'} fillOpacity={scrolled ? '1' : '0.9'} />
+              <ellipse cx="24" cy="18" rx="10" ry="6" transform="rotate(40 24 18)"
+                fill={scrolled ? '#a8892e' : 'white'} fillOpacity={scrolled ? '0.85' : '0.65'} />
+              <circle cx="18" cy="18" r="3"
+                fill={scrolled ? '#2a9459' : 'white'} />
+            </svg>
+            <div>
+              <p className={`font-display text-base font-semibold leading-tight tracking-wide transition-colors ${scrolled ? 'text-neutral-900' : 'text-white drop-shadow'}`}>
+                ALTAMIRA
+              </p>
+              <p className={`text-xs font-light leading-tight tracking-widest transition-colors ${scrolled ? 'text-neutral-400' : 'text-white/70'}`}>
+                CENTRO ESTÉTICO
+              </p>
+            </div>
           </a>
 
           {/* Desktop nav */}

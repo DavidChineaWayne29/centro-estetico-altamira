@@ -50,9 +50,8 @@ export const siteConfig: SiteConfig = {
     logoIsImage: false,
     links: [
       { label: 'Inicio',       href: '#inicio' },
-      { label: 'Tratamientos', href: '#servicios' },
+      { label: 'Servicios',    href: '#servicios' },
       { label: 'Nosotras',     href: '#nosotros' },
-      { label: 'Galería',      href: '#galeria' },
       { label: 'Contacto',     href: '#contacto' },
     ],
     ctaLabel: 'Pedir cita',

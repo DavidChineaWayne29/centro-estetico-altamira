@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, MessageCircle, Navigation } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { ContactConfig } from '@/types'
 import { SectionWrapper, SectionHeader } from '@/components/ui/SectionWrapper'
@@ -32,9 +32,31 @@ export function Contact({ contact }: ContactProps) {
               <div className="text-primary-600 mt-0.5 flex-shrink-0">
                 <MapPin size={22} strokeWidth={1.5} />
               </div>
-              <div>
+              <div className="flex-1">
                 <p className="font-display text-sm text-neutral-900 mb-1">{t('contact.address')}</p>
                 <p className="font-body text-neutral-600">{contact.address}</p>
+                {contact.mapEmbedUrl && (
+                  <div className="mt-4 rounded-brand overflow-hidden h-52 shadow-sm">
+                    <iframe
+                      src={contact.mapEmbedUrl}
+                      className="w-full h-full border-0"
+                      loading="lazy"
+                      title={t('contact.mapTitle')}
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
+                )}
+                {contact.mapUrl && (
+                  <a
+                    href={contact.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-2 font-body text-sm text-primary-600 hover:text-primary-700 transition-colors"
+                  >
+                    <Navigation size={14} />
+                    {t('contact.directions')}
+                  </a>
+                )}
               </div>
             </div>
           )}
@@ -82,17 +104,6 @@ export function Contact({ contact }: ContactProps) {
             </a>
           )}
 
-          {contact.mapEmbedUrl && (
-            <div className="mt-6 rounded-brand overflow-hidden h-56">
-              <iframe
-                src={contact.mapEmbedUrl}
-                className="w-full h-full border-0"
-                loading="lazy"
-                title={t('contact.mapTitle')}
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          )}
         </div>
 
         {/* Formulario */}

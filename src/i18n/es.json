@@ -84,7 +84,9 @@
     "namePlaceholder":   "Tu nombre",
     "emailPlaceholder":  "tu@email.com",
     "messagePlaceholder":"¿En qué podemos ayudarte?",
-    "required":          " *"
+    "required":          " *",
+    "mapTitle":          "Mapa de ubicación",
+    "directions":        "Cómo llegar · Abrir en Google Maps"
   },
   "footer": {
     "navigation": "Navegación",

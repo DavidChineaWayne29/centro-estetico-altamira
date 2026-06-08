@@ -90,6 +90,7 @@ export interface ContactConfig {
   email?: string;
   whatsapp?: string;
   mapEmbedUrl?: string;
+  mapUrl?: string;
   showForm: boolean;
 }
 

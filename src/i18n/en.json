@@ -84,7 +84,9 @@
     "namePlaceholder":   "Your name",
     "emailPlaceholder":  "you@email.com",
     "messagePlaceholder":"How can we help you?",
-    "required":          " *"
+    "required":          " *",
+    "mapTitle":          "Location map",
+    "directions":        "Get directions · Open in Google Maps"
   },
   "footer": {
     "navigation": "Navigation",
